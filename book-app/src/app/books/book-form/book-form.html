@@ -1,0 +1,87 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 border-0 rounded-4">
+    <div class="card-body">
+      <h2 class="text-center mb-4">
+        {{ isEditMode ? '✏️ Edit Book Details' : '📚 Add a New Book' }}
+      </h2>
+
+      <!-- Bind the form and check validity -->
+      <form #bookForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <!-- Title (required) -->
+        <div class="form-group mb-3">
+          <label for="btitle" class="form-label">Title</label>
+          <input
+            type="text"
+            [(ngModel)]="title"
+            id="btitle"
+            name="btitle"
+            class="form-control"
+            required
+            placeholder="Enter book title"
+            #titleRef="ngModel"
+          />
+          <div *ngIf="titleRef.invalid && titleRef.touched" class="text-danger small">
+            Title is required.
+          </div>
+        </div>
+
+        <!-- Author (required) -->
+        <div class="form-group mb-3">
+          <label for="bauthor" class="form-label">Author</label>
+          <input
+            type="text"
+            [(ngModel)]="author"
+            id="bauthor"
+            name="bauthor"
+            class="form-control"
+            required
+            placeholder="Enter author's name"
+            #authorRef="ngModel"
+          />
+          <div *ngIf="authorRef.invalid && authorRef.touched" class="text-danger small">
+            Author is required.
+          </div>
+        </div>
+
+        <!-- Genre (optional) -->
+        <div class="form-group mb-3">
+          <label for="bgenre" class="form-label">Genre</label>
+          <input
+            type="text"
+            [(ngModel)]="genre"
+            id="bgenre"
+            name="bgenre"
+            class="form-control"
+            placeholder="e.g., Fiction, Mystery"
+          />
+        </div>
+
+        <!-- Year Published (optional) -->
+        <div class="form-group mb-4">
+          <label for="byearpublished" class="form-label">Year Published</label>
+          <input
+            type="number"
+            [(ngModel)]="yearPublished"
+            id="byearpublished"
+            name="byearpublished"
+            class="form-control"
+            placeholder="e.g., 2022"
+          />
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-primary px-4 rounded-pill shadow"
+            [disabled]="bookForm.invalid"
+          >
+            {{ isEditMode ? '✅ Update Book' : '➕ Add Book' }}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

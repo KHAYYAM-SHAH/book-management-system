@@ -1,0 +1,32 @@
+<div *ngIf="book; else notFound" class="container mt-5">
+  <div class="card shadow-lg border-0 rounded-4 p-4 animate__animated animate__fadeIn">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">📖 Book Details</h2>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <strong>Title:</strong> {{ book.title }}
+        </li>
+        <li class="list-group-item">
+          <strong>Author:</strong> {{ book.author }}
+        </li>
+        <li class="list-group-item">
+          <strong>Genre:</strong> {{ book.genre || '-' }}
+        </li>
+        <li class="list-group-item">
+          <strong>Year Published:</strong> {{ book.yearPublished || '-' }}
+        </li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <!--    <a routerLink="/books" class="btn btn-outline-secondary btn-sm">← Back to List</a>  -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="alert alert-danger text-center mt-5">
+    Book not found!
+  </div>
+</ng-template>

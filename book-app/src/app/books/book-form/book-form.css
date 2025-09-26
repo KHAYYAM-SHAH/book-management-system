@@ -1,0 +1,19 @@
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+.card {
+  background-color: #fefefe;
+}
+
+label {
+  font-weight: 500;
+}

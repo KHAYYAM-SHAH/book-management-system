@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "new-book-app-28522",
+    "live": "new-book-app-28522"
+  },
+  "targets": {
+    "new-book-app-28522": {
+      "hosting": {
+        "live": [
+          "new-book-app-28522"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
